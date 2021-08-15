@@ -37,7 +37,7 @@ class PhotosList extends StatelessWidget {
                 },
 
             child: Hero(
-              tag: photo.src!.portrait!,
+              tag: photo.src! .portrait!,
               child: GridTile(
                 child: Container(
                   child: ClipRRect(
