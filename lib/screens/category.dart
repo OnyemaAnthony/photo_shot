@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:photo_shot/models/photo_model.dart';
 import 'package:photo_shot/utilities/utilities.dart';
 import 'package:http/http.dart' as http;
+import 'package:photo_shot/widgets/app_bar.dart';
+import 'package:photo_shot/widgets/photos_list.dart';
 
 class Category extends StatefulWidget {
   final String? categoryName;
@@ -45,6 +47,22 @@ class _CategoryState extends State<Category> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: ApBar(),
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(
+            children: [
+              PhotosList(
+                photos: photos,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
