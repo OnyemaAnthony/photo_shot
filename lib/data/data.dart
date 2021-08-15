@@ -1,7 +1,7 @@
 
 import 'package:photo_shot/models/category_model.dart';
 
-List<CategoryModel> categories(){
+List<CategoryModel> getCategories(){
 
 
   List<CategoryModel> categories = [];
