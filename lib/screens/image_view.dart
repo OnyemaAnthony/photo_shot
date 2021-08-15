@@ -40,8 +40,8 @@ class _ImageViewState extends State<ImageView> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 GestureDetector(
-                  onTap: (){
-                    savePhoto();
+                  onTap: ()async{
+                   await savePhoto();
                   
                   },
                   child: Stack(
@@ -110,7 +110,10 @@ class _ImageViewState extends State<ImageView> {
 
 
   savePhoto() async {
-    await _askPermission();
+    if(Platform.isAndroid){
+      await _askPermission();
+    }
+
     var response = await Dio().get(widget.imageUrl!,
         options: Options(responseType: ResponseType.bytes));
     final result =
