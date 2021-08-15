@@ -27,7 +27,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   fetchSearchPhotos(String text) async {
     var response = await http.get(
-      Uri.parse('https://api.pexels.com/v1/search?query=${text}'),
+      Uri.parse('https://api.pexels.com/v1/search?query=$text'),
       headers: {
         'Authorization': Utilities.API_KEY,
       },
